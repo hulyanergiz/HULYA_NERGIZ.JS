@@ -649,8 +649,11 @@
       }
 
       favButton.addEventListener("click", function (event) {
+        event.preventDefault();
         event.stopPropagation();
+        event.stopImmediatePropagation();
         handleFavorite(productId, favButton);
+        return false;
       });
     }
   };
